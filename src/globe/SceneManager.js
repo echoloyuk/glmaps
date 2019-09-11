@@ -335,12 +335,15 @@ function SceneManagerProto(canvas, {data = [], animate, visType, moon}) {
     }
 
     const { x, y, z } = this.camera.position;
+    console.log(x, y, z);
     // console.log(x, y, z);
 
     // zoom
     // camera.position.z = _cameraZ;
-    const rotSpeed = 0.0005;
+    const rotSpeed = 0.005;
+    // this.camera.up.set(0, 1, 0);
     // this.camera.position.x = x * Math.cos(rotSpeed) + z * Math.sin(rotSpeed);
+    // this.camera.position.y = 0;
     // camera.position.y = y * Math.cos(rotSpeed) + z * Math.sin(rotSpeed);
     // this.camera.position.z = z * Math.cos(rotSpeed) - x * Math.sin(rotSpeed);
 
