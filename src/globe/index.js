@@ -59,7 +59,6 @@ const ThreeCube = (props) => {
   
   useEffect(() => {
     if (!data.length) return () => {};
-
     const [cleanFunc] = threeEntryPoint({
       id,
       data,

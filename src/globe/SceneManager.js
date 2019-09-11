@@ -1,5 +1,6 @@
 import * as THREE from 'three';
-import TrackballControls from 'three-trackballcontrols';
+// import TrackballControls from 'three-trackballcontrols';
+import TrackballControls from '../others/controlls';
 
 import Curve from './Curve';
 import CubeMesh from './CubeMesh';
@@ -232,7 +233,7 @@ function SceneManagerProto(canvas, {data = [], animate, visType, moon}) {
     // sceneObj.add(pointLight);
 
     // DirectionalLight
-    const directionalLight = new THREE.DirectionalLight(0xcccccc, 0.3); // color, intensity
+    const directionalLight = new THREE.DirectionalLight(0xcccccc, 0.1); // color, intensity
     directionalLight.position.set(10, 6, 10);
     sceneObj.add(directionalLight);
 
@@ -251,7 +252,7 @@ function SceneManagerProto(canvas, {data = [], animate, visType, moon}) {
     controls.zoomSpeed = 2;
     controls.panSpeed = 8;
     controls.noZoom = false;
-    controls.noPan = false;
+    controls.noPan = true;
     controls.staticMoving = true;
     controls.dynamicDampingFactor = 0.3;
 
@@ -333,14 +334,15 @@ function SceneManagerProto(canvas, {data = [], animate, visType, moon}) {
       this.sceneSubject.update(segIndex);
     }
 
-    const { x, z } = this.camera.position;
+    const { x, y, z } = this.camera.position;
+    // console.log(x, y, z);
 
     // zoom
     // camera.position.z = _cameraZ;
     const rotSpeed = 0.0005;
-    this.camera.position.x = x * Math.cos(rotSpeed) + z * Math.sin(rotSpeed);
+    // this.camera.position.x = x * Math.cos(rotSpeed) + z * Math.sin(rotSpeed);
     // camera.position.y = y * Math.cos(rotSpeed) + z * Math.sin(rotSpeed);
-    this.camera.position.z = z * Math.cos(rotSpeed) - x * Math.sin(rotSpeed);
+    // this.camera.position.z = z * Math.cos(rotSpeed) - x * Math.sin(rotSpeed);
 
     this.camera.lookAt(this.scene.position);
 

@@ -44,7 +44,7 @@ const PaintMap = (props) => {
   const deckRootEl = useMemo(() => {
     return layer === 'Globe' ? (
       <Globe 
-        moon={true}
+        moon={false}
         visType={visType}
         animate={animation}
         data={data} />
